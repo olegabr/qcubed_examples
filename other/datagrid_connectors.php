@@ -33,28 +33,28 @@ class ExamplesForm extends QForm {
 		// to create, define and setup the various columns that WE choose, in the order
 		// that WE want.  NOTE that we use simple string-based property names, OR QQuery
 		// node descriptors to specify what we want for each column.
-		$this->dtgProjects->MetaAddColumn('Name');
-		$this->dtgProjects->MetaAddColumn('StartDate');
-		$this->dtgProjects->MetaAddColumn(QQN::Project()->EndDate);
+		$this->dtgProjects->AddConnectedColumn('Name');
+		$this->dtgProjects->AddConnectedColumn('StartDate');
+		$this->dtgProjects->AddConnectedColumn(QQN::Project()->EndDate);
 
 		// We can easily add columns from linked/related tables.  However, to do this
 		// you MUST use a QQuery node descriptor.  No string-based properties allowed.
 		// Bonus: the Meta DataGrid will even automatically add sorting for columns in related tables.
-		$colUsername = $this->dtgProjects->MetaAddColumn(QQN::Project()->ManagerPerson->Login->Username);
+		$colUsername = $this->dtgProjects->AddConnectedColumn(QQN::Project()->ManagerPerson->Login->Username);
 
 		// And remember, since it's a regular datagrid with regular columns,
 		// we can stylize as we see fit
 		$colUsername->BackColor = '#cef';
 		$colUsername->Name = 'Manager\'s Username';
 
-		// Also, note that MetaAddColumn and MetaAddTypeColumn can use attribute overriding as well
-		$this->dtgProjects->MetaAddTypeColumn('ProjectStatusTypeId', 'ProjectStatusType', 'FontBold=true');
+		// Also, note that AddConnectedColumn and AddDbTypeColumn can use attribute overriding as well
+		$this->dtgProjects->AddDbTypeColumn('ProjectStatusTypeId', 'ProjectStatusType', 'FontBold=true');
 
 		$this->pxyExample = new QControlProxy($this);
 		$this->pxyExample->AddAction(new QClickEvent(), new QAjaxAction('pxyExample_Click'));
 
 		// FInally, there are even Meta methods to add an Edit Button column
-		$this->dtgProjects->MetaAddEditProxyColumn($this->pxyExample, 'Click Me', 'Faux Edit Column');
+		$this->dtgProjects->AddEditProxyColumn($this->pxyExample, 'Click Me', 'Faux Edit Column');
 	}
 
 	// Instead of actually redirecting you to an example edit project page, we'll
