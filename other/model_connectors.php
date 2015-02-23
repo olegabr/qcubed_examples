@@ -15,18 +15,18 @@ class ExamplesForm extends QForm {
 
 	protected $btnSave;
 	protected $btnCancel;
-	// Local instance of a Person MetaControl
+	// Local instance of a Person ModelConnectors
 	protected $mctPerson;
 
 	// Initialize our Controls during the Form Creation process
 	protected function Form_Create() {
 		// For now, let's load Person of ID #1
 		// Remember that $this is the Meta Control's parent, because every QControl
-		// we get from PersonMetaControl should have $this form as its parent.
-		$this->mctPerson = PersonMetaControl::Create($this, 1);
+		// we get from PersonConnector should have $this as its parent.
+		$this->mctPerson = PersonConnector::Create($this, 1);
 
 		// Instead of manually defining and setting up each QLabel and QTextBox,
-		// we utilize MetaControl's _create() functionality to create them
+		// we utilize the ModelConnector's _create() functionality to create them
 		// for us.
 		//$this->lblFirstName = $this->mctPerson->lblFirstName_Create();
 		//$this->lblLastName = $this->mctPerson->lblLastName_Create();
@@ -82,7 +82,7 @@ class ExamplesForm extends QForm {
 		$this->btnSave->Visible = false;
 		$this->btnCancel->Visible = false;
 
-		// Finally, let's utilize the MetaControl to refresh all the data fields (in case a data was modified and saved
+		// Finally, let's utilize the ModelConnector to refresh all the data fields (in case a data was modified and saved
 		// or a textbox was modified and NOT saved)
 		$this->mctPerson->Refresh();
 	}

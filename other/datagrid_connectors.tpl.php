@@ -4,12 +4,12 @@
 <div id="instructions">
 	<h1>Generated DataGrid Objects</h1>
 
-	<p>Although the <em>concept</em> is known as a <strong>Meta</strong> DataGrid... the generated <strong>DataGrid</strong> objects
+	<p>Although the <em>concept</em> is known as a DataGrid <strong>Connector</strong> ... the generated <strong>DataGrid</strong> objects
 		in and of itself is just a subclass of the actual <strong>QDataGrid</strong> object.  (Note that this is different
-		than a <strong>MetaControl</strong>, which is <em>/not</em> a control, but is in fact a single data object
+		than a <strong>ModelConnector</strong>, which is <em>/not</em> a control, but is in fact a single data object
 		and a collection of controls that can be generated from and linked to it.)</p>
 
-	<p>A generated/meta datagrid is simply a <strong>QDataGrid</strong> with a bunch of <strong>Meta___()</strong> methods to
+	<p>A generated datagrid connector is simply a <strong>QDataGrid</strong> with a bunch of <strong>Connector___()</strong> methods to
 		allow you to easily define and add columns for a given data class.</p>
 
 	<p>Using simple string properties or more complex (and more powerful) <strong>QCubed Query Nodes</strong>, you can
@@ -17,14 +17,14 @@
 		will automatically take care of things like the column's <strong>Title</strong>, <strong>Html</strong>, <strong>Filter</strong> and
 		<strong>Sorting</strong> properties.</p>
 
-	<p>It even comes with its own <strong>MetaDataBinder()</strong>, and the datagrid is already set up to use that
+	<p>It even comes with its own <strong>ConnectorDataBinder()</strong>, and the datagrid is already set up to use that
 		as its databinder (but of course, even this is override-able). It's also very easy to specify
 		a condition on the meta datagrid - you don't even need to define your own data bind function! Simply set
 		the <strong>AdditionalConditions</strong> property to an appropriate QQuery condition, and you're good to go. In
 		this example, we'll only show projects whose status is "open". Clauses such as expand can also easily
 		be applied by similarly setting the <strong>AdditionalClauses</strong> property.</p>
 
-	<p>But again, similar to <strong>MetaControls</strong>, note that the datagrid is just a regular <strong>QDataGrid</strong> object,
+	<p>But again, similar to <strong>ModelConnectors</strong>, note that the datagrid is just a regular <strong>QDataGrid</strong> object,
 		and the columns are just regular <strong>QDataGridColumn</strong> objects, which means that you can modify
 		the colums or the datagrid itself however you see fit.</p>
 
