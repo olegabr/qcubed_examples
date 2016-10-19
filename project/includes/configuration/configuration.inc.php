@@ -80,9 +80,9 @@ if (!defined('SERVER_INSTANCE')) {
 	 *		__SUBDIRECTORY__ = '/qcubed'
 	 */
 
-	define ('__DOCROOT__', '/home/olegabr/work');
+	define ('__DOCROOT__', '/var/www/html');
 	define ('__VIRTUAL_DIRECTORY__', '');
-	define ('__SUBDIRECTORY__', '/qcubed_examples');
+	define ('__SUBDIRECTORY__', '');
 
 	/*
 	 * The project directory is where your editable project files go. These include files
@@ -280,20 +280,18 @@ if (!defined('SERVER_INSTANCE')) {
 	 * Note: any option not used or set to blank will result in using the default value for that option
 	 */
 
-	/*<--
 	define('DB_CONNECTION_1', serialize(array(
-		'adapter' => '{db1_adapter}',
-		'server' => '{db1_serverAddress}',
-		'port' => '{db1_serverport}',
-		'database' => '{db1_dbname}',
-		'username' => '{db1_username}',
-		'password' => '{db1_password}',
+		'adapter' => 'MySqli5',
+		'server' => 'database',
+		'port' => null,
+		'database' => 'qcubed',
+		'username' => 'qcubed',
+		'password' => '123456',
 		'caching' => false,
 		'profiling' => false,
 		'encoding' => 'utf8',
 		'dateformat' => null,
-		'onlyfullgroupby' => defined by db adapter)));
-	-->*/
+		'onlyfullgroupby' => true)));
 
 	// Additional Database Connection Strings can be defined here (e.g. for connection #2, #3, #4, #5, etc.)
 	//			define('DB_CONNECTION_2', serialize(array('adapter'=>'SqlServer', 'server'=>'localhost', 'port'=>null, 'database'=>'qcubed', 'username'=>'root', 'password'=>'', 'profiling'=>false, 'encoding' => 'utf8')));

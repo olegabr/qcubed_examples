@@ -1,0 +1,42 @@
+version: '2'
+services:
+    mysql:
+        image: mysql:5.7
+        # no need to expose it
+#        ports:
+#            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=123456
+            - MYSQL_DATABASE=qcubed
+            - MYSQL_USER=qcubed
+            - MYSQL_PASSWORD=123456
+        volumes:
+            - data:/var/lib/mysql
+            - ./mysql_innodb.sql:/docker-entrypoint-initdb.d/mysql_innodb.sql
+        logging:
+            options:
+                max-size: "10m"
+                max-file: "10"
+    apache:
+        build: .
+        ports:
+            - "80:80"
+#            - "443:443"
+        depends_on:
+            - mysql
+        links:
+            - mysql:database
+        voumes:
+            #qcubed_tmp:/var/www/html/project/tmp
+            ./project:/var/www/html/project
+            qcubed_cache:/var/www/html/vendor/qcubed/framework/assets/cache
+            qcubed_upload:/var/www/html/vendor/qcubed/framework/assets/upload
+        logging:
+            options:
+                max-size: "10m"
+                max-file: "10"
+volumes:
+    data:
+    #qcubed_tmp:
+    qcubed_cache:
+    qcubed_upload:
