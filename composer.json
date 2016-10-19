@@ -1,0 +1,37 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/qcubed/framework"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/qcubed/composer"
+    }
+
+  ],
+  "name": "qcubed/qcubed_examples",
+  "description": "QCubed examples application",
+  "keywords": ["qcubed", "framework", "examples", "tutorial"],
+  "homepage": "http://qcu.be/",
+  "type": "project",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/qcubed/qcubed_examples/issues?state=open",
+    "source": "https://github.com/qcubed/qcubed_examples"
+  },
+  "require": {
+    "php": ">=5.4.0",
+    "qcubed/framework": "dev-rc-3",
+    "qcubed/composer": "dev-master",
+    "datatables/datatables": "^1.10",
+    "qcubed/plugin_datatables": "^1.0",
+    "ckeditor/ckeditor": "^4.5",
+    "qcubed/plugin_ckeditor": "^1.0",
+    "qcubed/plugin_phonetextbox": "^1.0",
+    "qcubed/plugin_signaturepad": "^1.1",
+    "qcubed/plugin_autocomplete2": "^1.0",
+    "qcubed/plugin_timepicker": "^1.0"
+  },
+  "minimum-stability":"dev"
+}
