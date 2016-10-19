@@ -19,6 +19,9 @@ services:
                 max-file: "10"
     apache:
         build: .
+        environment:
+            - APACHE_RUN_USER=www-data
+            - APACHE_RUN_GROUP=www-data
         ports:
             - "80:80"
 #            - "443:443"
@@ -26,11 +29,11 @@ services:
             - mysql
         links:
             - mysql:database
-        voumes:
-            #qcubed_tmp:/var/www/html/project/tmp
-            ./project:/var/www/html/project
-            qcubed_cache:/var/www/html/vendor/qcubed/framework/assets/cache
-            qcubed_upload:/var/www/html/vendor/qcubed/framework/assets/upload
+        volumes:
+            #- qcubed_tmp:/var/www/html/project/tmp
+            - ./project:/var/www/html/project
+            - qcubed_cache:/var/www/html/vendor/qcubed/framework/assets/cache
+            - qcubed_upload:/var/www/html/vendor/qcubed/framework/assets/upload
         logging:
             options:
                 max-size: "10m"

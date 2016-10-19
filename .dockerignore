@@ -1,3 +1,4 @@
 *.sql
 Dockerfile
 .git*
+run.sh
