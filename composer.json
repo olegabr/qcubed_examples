@@ -1,6 +1,9 @@
 {
   "config": {
-    "github-protocols": ["https","http"]
+    "github-protocols": ["https","http"],
+    "github-oauth": {
+	  "github.com": "a39a26d4dbea66c37771a98f93269ce3735a0472"
+    }
   },
   
   "repositories": [
