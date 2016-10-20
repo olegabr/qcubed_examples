@@ -1,4 +1,5 @@
 {
+  "github-protocols": ["https"],
   "repositories": [
     {
       "type": "vcs",
