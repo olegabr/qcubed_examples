@@ -3,7 +3,7 @@ services:
     - docker
 
 script: 
-    - docker run --rm -v .:/app composer/composer install
+    - docker run --rm -v $(pwd):/app composer/composer install
     - docker-compose build
     - docker-compose up -d
     - docker run --rm --network=qcubedexamples_default qcubedexamples_apache ./vendor/bin/codecept run
