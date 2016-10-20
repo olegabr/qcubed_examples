@@ -31,7 +31,8 @@
     "qcubed/plugin_phonetextbox": "^1.0",
     "qcubed/plugin_signaturepad": "^1.1",
     "qcubed/plugin_autocomplete2": "^1.0",
-    "qcubed/plugin_timepicker": "^1.0"
+    "qcubed/plugin_timepicker": "^1.0",
+    "codeception/codeception": "^2.2"
   },
   "minimum-stability":"dev"
 }
