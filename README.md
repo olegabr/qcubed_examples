@@ -37,3 +37,11 @@ Then go to the [http://localhost](http://localhost) to see your examples.
 In the file `docker-compose` you can modify the `80:80` part to the `8080:80` or any other port if the port `80` is already used on your system.
 
 Then go to the [http://localhost:8080](http://localhost:8080) to see your examples.
+
+## Running tests
+
+```
+docker-compose build
+docker-compose up -d
+docker run --rm --network=qcubedexamples_default qcubedexamples_apache ./vendor/bin/codecept run
+```
