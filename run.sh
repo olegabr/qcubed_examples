@@ -11,4 +11,6 @@ if ! hash docker-compose 2>/dev/null; then
 fi
 
 # startup the examples application
+docker run --rm -v $(pwd):/var/www/html -w /var/www/html composer/composer install
+docker-compose build
 docker-compose up -d

@@ -41,7 +41,9 @@ Then go to the [http://localhost:8080](http://localhost:8080) to see your exampl
 ## Running tests
 
 ```
+rm -rf vendor composer.lock
+docker run --rm -v $(pwd):/var/www/html -w /var/www/html composer/composer install
 docker-compose build
 docker-compose up -d
-docker run --rm --network=qcubedexamples_default qcubedexamples_apache ./vendor/bin/codecept run
+docker run --rm --network=qcubedexamples_default -v $(pwd)/tests:/var/www/html/tests qcubedexamples_apache ./vendor/bin/codecept run
 ```
