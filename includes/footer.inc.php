@@ -1,15 +1,15 @@
 <?php
 	// The url to send to view_source.php
 	// first encode the basic info
-	$strCatId = Examples::GetCategoryId();
+	$strCatId = MyExamples::GetCategoryId();
 	$strUrl = __VIRTUAL_DIRECTORY__ .
 		__EXAMPLES__ .
 		'/view_source.php/' .
 		$strCatId . '/' .
-		Examples::GetExampleId();
+		MyExamples::GetExampleId();
 
 	if ($strCatId == "plugin") {
-		$strFile = Examples::GetPluginFile();
+		$strFile = MyExamples::GetPluginFile();
 		$strUrl .= '/' . $strFile . '/' . $strFile;
 	} else {
 		$strUrl .= '/' . basename(QApplication::$ScriptName);

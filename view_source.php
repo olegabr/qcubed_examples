@@ -12,8 +12,8 @@
 		$strScript = QApplication::PathInfo(2);
 	}
 
-	$strReference = Examples::GetExampleScriptPath($strCategoryId, $strExampleId);
-	$strName = Examples::GetExampleName($strCategoryId, $strExampleId);
+	$strReference = MyExamples::GetExampleScriptPath($strCategoryId, $strExampleId);
+	$strName = MyExamples::GetExampleName($strCategoryId, $strExampleId);
 
 	if (!$strScript) {
 		$strUrl = QApplication::$RequestUri . substr($strReference, strrpos($strReference, '/'));
@@ -29,7 +29,7 @@
 	</head>
 	<body>
 		<div id="closeWindow"><a href="javascript:window.close()" class="close-window">Close this Window</a></div>
-		<header><nav class="page-links"><span class="headerSmall"><?php _p(Examples::CodeLinks($strCategoryId, $strExampleId, $strSubId, $strScript), false); ?></nav></header>
+		<header><nav class="page-links"><span class="headerSmall"><?php _p(MyExamples::CodeLinks($strCategoryId, $strExampleId, $strSubId, $strScript), false); ?></nav></header>
 		<section id="content">
 <?php
 	// Filename Cleanup

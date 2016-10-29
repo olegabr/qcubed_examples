@@ -1,5 +1,5 @@
 <?php
-	class Examples {
+	class MyExamples {
 		public static $Categories = array();
 		public static $AdditionalCode = array();
 		public static $PluginExamples = array();
@@ -9,9 +9,9 @@
 			$intIndex = -1;
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Basic CodeGen';
-			Examples::$Categories[$intIndex]['description'] = 'An introduction to the QCubed Code Generator';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Basic CodeGen';
+			static::$Categories[$intIndex]['description'] = 'An introduction to the QCubed Code Generator';
  			self::AddCoreExampleFile($intIndex, '/code_generator/about.php (About Sections 1 - 3)');
 			self::AddCoreExampleFile($intIndex, '/code_generator/intro.php About the Database');
 			self::AddCoreExampleFile($intIndex, '/code_generator/objects.php * Object Relational Model');
@@ -22,13 +22,13 @@
 			self::AddCoreExampleFile($intIndex, '/code_generator/relationships_many.php * Many-to-Many Relationships');
 			self::AddCoreExampleFile($intIndex, '/code_generator/script_path.php Defining Relationships without Foreign Keys');
 			self::AddCoreExampleFile($intIndex, '/code_generator/primary_keys.php Explanation of QCubed Primary Key Requirement');
-			Examples::$AdditionalCode[__VIRTUAL_DIRECTORY__ . __EXAMPLES__ . '/code_generator/intro.php'] = array('mysql_innodb.sql','sql_server.sql');
-			Examples::$AdditionalCode[__VIRTUAL_DIRECTORY__  . __EXAMPLES__ . '/code_generator/script_path.php'] = array('mysql_myisam.sql', 'relationships.txt');
+			static::$AdditionalCode['/code_generator/intro.php'] = array('mysql_innodb.sql','sql_server.sql');
+			static::$AdditionalCode['/code_generator/script_path.php'] = array('mysql_myisam.sql', 'relationships.txt');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'More About the Object Relational Model';
-			Examples::$Categories[$intIndex]['description'] = 'Looking more in depth at the functionality of the generated ORM';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'More About the Object Relational Model';
+			static::$Categories[$intIndex]['description'] = 'Looking more in depth at the functionality of the generated ORM';
 			self::AddCoreExampleFile($intIndex, '/more_codegen/sort_limit.php * Sorting and Limiting Array Results');
 			self::AddCoreExampleFile($intIndex, '/more_codegen/late_bind.php * Late Binding of Related Objects');
 			self::AddCoreExampleFile($intIndex, '/more_codegen/early_bind.php * Early Binding of Related Objects');
@@ -39,9 +39,9 @@
 			self::AddCoreExampleFile($intIndex, '/more_codegen/optimistic_locking.php * Optimistic Locking');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Querying in QCubed';
-			Examples::$Categories[$intIndex]['description'] = 'Ad Hoc Queries, Custom Load Methods, and QCubed Query';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Querying in QCubed';
+			static::$Categories[$intIndex]['description'] = 'Ad Hoc Queries, Custom Load Methods, and QCubed Query';
 			self::AddCoreExampleFile($intIndex, '/qcubed_query/qq.php * QCubed Query: Object Oriented Database Querying');
 			self::AddCoreExampleFile($intIndex, '/qcubed_query/qqnode.php * QCubed Query: The QQ Node Classes');
 			self::AddCoreExampleFile($intIndex, '/qcubed_query/qqcondition.php * QCubed Query: The QQ Condition Classes');
@@ -58,9 +58,9 @@
 			self::AddCoreExampleFile($intIndex, '/qcubed_query/qcache.php * Caching Query Results with QueryArrayCached');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Basic QForms';
-			Examples::$Categories[$intIndex]['description'] = 'An introduction to QForms and QControls';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Basic QForms';
+			static::$Categories[$intIndex]['description'] = 'An introduction to QForms and QControls';
 			self::AddCoreExampleFile($intIndex, '/basic_qform/about.php (About Sections 4 - 10)');
 			self::AddCoreExampleFile($intIndex, '/basic_qform/intro.php Hello World Example');
 			self::AddCoreExampleFile($intIndex, '/basic_qform/state.php QForms: Stateful, Event-Driven Objects');
@@ -73,17 +73,17 @@
 			self::AddCoreExampleFile($intIndex, '/basic_qform/textbox.php * Introduction to QTextBoxControls');
 			
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Basic AJAX in QForms';
-			Examples::$Categories[$intIndex]['description'] = 'A look at how to AJAX-enable your QForms';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Basic AJAX in QForms';
+			static::$Categories[$intIndex]['description'] = 'A look at how to AJAX-enable your QForms';
 			self::AddCoreExampleFile($intIndex, '/basic_ajax/intro.php Hello World Example using AJAX');
 			self::AddCoreExampleFile($intIndex, '/basic_ajax/calculator_2.php Calculator Example using AJAX');
 			self::AddCoreExampleFile($intIndex, '/basic_ajax/wait_icon.php Adding a Wait Icon');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'More About Events and Actions';
-			Examples::$Categories[$intIndex]['description'] = 'Looking more in depth at the capabilities of the QEvent and QAction libraries';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'More About Events and Actions';
+			static::$Categories[$intIndex]['description'] = 'Looking more in depth at the capabilities of the QEvent and QAction libraries';
 			self::AddCoreExampleFile($intIndex, '/events_actions/editable_listbox.php Editable ListBox');
 			self::AddCoreExampleFile($intIndex, '/events_actions/editable_listbox_2.php Conditional Events');
 			self::AddCoreExampleFile($intIndex, '/events_actions/delayed.php Trigger-Delayed Events');
@@ -96,9 +96,9 @@
 			self::AddCoreExampleFile($intIndex, '/events_actions/control_proxy.php Using QControlProxies to have Non-QControls Trigger Events');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Paginated Controls';
-			Examples::$Categories[$intIndex]['description'] = 'The QHtmlTable, QDataGrid and QDataRepeater controls';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Paginated Controls';
+			static::$Categories[$intIndex]['description'] = 'The QHtmlTable, QDataGrid and QDataRepeater controls';
 			self::AddCoreExampleFile($intIndex, '/datagrid/intro.php * QHtmlTable');
 			self::AddCoreExampleFile($intIndex, '/datagrid/columns.php * QHtmlTable Columns');
 			self::AddCoreExampleFile($intIndex, '/datagrid/column_values.php * QHtmlTable Formatting and Styling');
@@ -112,18 +112,18 @@
 			self::AddCoreExampleFile($intIndex, '/dynamic/inline_editing.php * Datagrid with Inline Editing');
 
 			self::AddCoreExampleFile($intIndex, '/master_detail/project_list.php * Nested QDataGrid');
-			Examples::$AdditionalCode[__VIRTUAL_DIRECTORY__ . __EXAMPLES__  . '/master_detail/project_list.php'] = array(
+			static::$AdditionalCode['/master_detail/project_list.php'] = array(
 				'records.summary.php',
 				'records.summary.tpl.php',
 				'styles.css');
 			self::AddCoreExampleFile($intIndex, '/datarepeater/ajax.php * Simple QDataRepeater using AJAX-triggered Pagination');
-			Examples::$AdditionalCode[__VIRTUAL_DIRECTORY__ . __EXAMPLES__  . '/datarepeater/ajax.php'] = array('dtr_persons.tpl.php');
+			static::$AdditionalCode['/datarepeater/ajax.php'] = array('dtr_persons.tpl.php');
 
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Advanced Controls Manipulation';
-			Examples::$Categories[$intIndex]['description'] = 'Dynamically creating controls, Implementing custom controls';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Advanced Controls Manipulation';
+			static::$Categories[$intIndex]['description'] = 'Dynamically creating controls, Implementing custom controls';
 			self::AddCoreExampleFile($intIndex, '/dynamic/qpanel.php Introduction to QBlockControls');
 			self::AddCoreExampleFile($intIndex, '/dynamic/qpanel_2.php Dynamically Changing a Control\'s Parent');
 			self::AddCoreExampleFile($intIndex, '/other_controls/persist.php Persistent Controls: Performance for Reusable Components');
@@ -139,9 +139,9 @@
 				'PersonEditPanel.class.php', 'PersonEditPanel.tpl.php'));
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Advanced AJAX';
-			Examples::$Categories[$intIndex]['description'] = 'Advanced AJAX functionality like drag and drop, selection and cinematic effects';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Advanced AJAX';
+			static::$Categories[$intIndex]['description'] = 'Advanced AJAX functionality like drag and drop, selection and cinematic effects';
 			self::AddCoreExampleFile($intIndex, '/advanced_ajax/renamer.php Renameable Labels');
 			self::AddCoreExampleFile($intIndex, '/advanced_ajax/renamer_2.php Porting Code to the Client Side');
 			self::AddCoreExampleFile($intIndex, '/advanced_ajax/move.php Moveable Controls (a.k.a. Drag and Drop)');
@@ -154,12 +154,12 @@
 			self::AddCoreExampleFile($intIndex, '/other_controls/js_return_param_example.php Post data back to the server from jQuery UI controls');
 			self::AddCoreExampleFile($intIndex, '/advanced_ajax/jquery_effects.php JQuery Effects');
 			
-			Examples::$AdditionalCode[__VIRTUAL_DIRECTORY__ . __EXAMPLES__ . '/advanced_ajax/dialog_box.php'] = array('CalculatorWidget.class.php','CalculatorWidget.tpl.php');
+			static::$AdditionalCode['/advanced_ajax/dialog_box.php'] = array('CalculatorWidget.class.php','CalculatorWidget.tpl.php');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Other Advanced Controls';
-			Examples::$Categories[$intIndex]['description'] = 'A collection of examples for some of the more advanced/complex QControls';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Other Advanced Controls';
+			static::$Categories[$intIndex]['description'] = 'A collection of examples for some of the more advanced/complex QControls';
 			self::AddCoreExampleFile($intIndex, '/image_label/intro.php Introduction to QImageLabel');
 			self::AddCoreExampleFile($intIndex, '/image_rollover/intro.php Image rollovers using QImageRollover');
 			self::AddCoreExampleFile($intIndex, '/treenav/treenav.php Introduction to QTreeNav');
@@ -172,18 +172,18 @@
 			self::AddCoreReferencedFile('/image_browser/test_image_browser.php', array('image_browser.tpl.php', 'imagebrowser.css'));
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Model Connectors, DataGrid Connectors, and the Drafts';
-			Examples::$Categories[$intIndex]['description'] = 'Combining the Code Generator with the QForm Library';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Model Connectors, DataGrid Connectors, and the Drafts';
+			static::$Categories[$intIndex]['description'] = 'Combining the Code Generator with the QForm Library';
 			self::AddCoreExampleFile($intIndex, '/other/formgen.php QForm and CodeGen, a Winning Combination to RAD');
 			self::AddCoreExampleFile($intIndex, '/other/model_connectors.php * Introduction to Model Connectors');
 			self::AddCoreExampleFile($intIndex, '/other/datagrid_connectors.php * Introduction to DataGrid Connectors');
 			self::AddCoreExampleFile($intIndex, '/other/form_drafts.php * Introduction to the Drafts');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Beyond HTML';
-			Examples::$Categories[$intIndex]['description'] = 'Other libraries in QCubed, including support for Email and RSS';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Beyond HTML';
+			static::$Categories[$intIndex]['description'] = 'Other libraries in QCubed, including support for Email and RSS';
 			self::AddCoreExampleFile($intIndex, '/communication/email.php Introduction to QEmailServer');
 			self::AddCoreExampleFile($intIndex, '/communication/rss.php * Introduction to QRssFeed');
 			self::AddCoreExampleFile($intIndex, '/other/parsing.php Introduction to parsing with QLexer and QRegex');
@@ -200,9 +200,9 @@
 			
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Other Tidbits';
-			Examples::$Categories[$intIndex]['description'] = 'Other random examples, samples and tutorials';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Other Tidbits';
+			static::$Categories[$intIndex]['description'] = 'Other random examples, samples and tutorials';
 			self::AddCoreExampleFile($intIndex, '/basic_qform/xss.php * Security: Preventing Cross-Site Scripting');
 			self::AddCoreExampleFile($intIndex, '/other/optimistic_locking.php * Optimistic Locking and QForms');
 			self::AddCoreExampleFile($intIndex, '/other/attribute_overriding.php Attribute Overriding');
@@ -214,9 +214,9 @@
 			self::AddCoreReferencedFile('/other/alternate_template.php', 'some_template_file.tpl.php');
 
 			$intIndex++;
-			Examples::$Categories[$intIndex] = array();
-			Examples::$Categories[$intIndex]['name'] = 'Plugin System';
-			Examples::$Categories[$intIndex]['description'] = 'Infrastructure that lets the community extend QCubed';
+			static::$Categories[$intIndex] = array();
+			static::$Categories[$intIndex]['name'] = 'Plugin System';
+			static::$Categories[$intIndex]['description'] = 'Infrastructure that lets the community extend QCubed';
 			self::AddCoreExampleFile($intIndex, '/plugins/about.php Plugin Ecosystem: Introduction');
 			self::AddCoreExampleFile($intIndex, '/plugins/components.php Writing your own plugins, Part 1: components of a plugin');
 			self::AddCoreExampleFile($intIndex, '/plugins/packaging.php Writing your own plugins, Part 2: packaging a plugin');
@@ -230,9 +230,9 @@
 
 				if (count($plugins) > 0) {
 					//$intIndex++;
-					//Examples::$Categories[$intIndex] = array();
-					//Examples::$Categories[$intIndex]['name'] = 'Examples for Plugins';
-					//Examples::$Categories[$intIndex]['description'] = 'Examples and Documentation for Community-Written Plugins';
+					//static::$Categories[$intIndex] = array();
+					//static::$Categories[$intIndex]['name'] = 'Examples for Plugins';
+					//static::$Categories[$intIndex]['description'] = 'Examples and Documentation for Community-Written Plugins';
 
 					foreach ($plugins as $dirName) {
 						if ($dirName != '.' && $dirName != '..' && file_exists(__PLUGINS__ . '/' . $dirName . '/composer.json')) {
@@ -256,29 +256,29 @@
 		}
 
 		public static function AddPluginExampleFile($strPluginName, $strExampleFileName) {
-			Examples::$PluginExamples[$strPluginName][] = $strExampleFileName;
+			static::$PluginExamples[$strPluginName][] = $strExampleFileName;
 		}
 
 		public static function AddPluginExtraFile($strPluginName, $strExampleFileName, $extras) {
-			Examples::$PluginAdditions[$strPluginName][$strExampleFileName] = $extras;
+			static::$PluginAdditions[$strPluginName][$strExampleFileName] = $extras;
 		}
 
 		private static function AddCoreExampleFile($intIndex, $strExampleFileName) {
-			array_push(Examples::$Categories[$intIndex], __VIRTUAL_DIRECTORY__ . __EXAMPLES__ . $strExampleFileName);
+			array_push(static::$Categories[$intIndex], $strExampleFileName);
 		}
 		
 		private static function AddCoreReferencedFile($strExampleFileName, $mixReferencedFile) {
 			if (!is_array($mixReferencedFile)) {
 				$mixReferencedFile = array($mixReferencedFile);
 			}
-			Examples::$AdditionalCode[__VIRTUAL_DIRECTORY__ . __EXAMPLES__ . $strExampleFileName] = $mixReferencedFile;
+			static::$AdditionalCode[$strExampleFileName] = $mixReferencedFile;
 		}
 
 		public static function GetCategoryId() {
-			$numCategories = count(Examples::$Categories);
-			$categories = Examples::$Categories;
-			for ($intCategoryIndex = 0; $intCategoryIndex < count(Examples::$Categories); $intCategoryIndex++) {
-				$objExampleCategory = Examples::$Categories[$intCategoryIndex];
+			$numCategories = count(static::$Categories);
+			$categories = static::$Categories;
+			for ($intCategoryIndex = 0; $intCategoryIndex < count(static::$Categories); $intCategoryIndex++) {
+				$objExampleCategory = static::$Categories[$intCategoryIndex];
 				
 				for ($intExampleIndex = 0; $intExampleIndex < count($objExampleCategory); $intExampleIndex++) {
 					if (array_key_exists($intExampleIndex, $objExampleCategory)) {
@@ -303,8 +303,8 @@
 		}
 
 		public static function GetExampleId() {
-			for ($intCategoryIndex = 0; $intCategoryIndex < count(Examples::$Categories); $intCategoryIndex++) {
-				$objExampleCategory = Examples::$Categories[$intCategoryIndex];
+			for ($intCategoryIndex = 0; $intCategoryIndex < count(static::$Categories); $intCategoryIndex++) {
+				$objExampleCategory = static::$Categories[$intCategoryIndex];
 				
 				for ($intExampleIndex = 0; $intExampleIndex < count($objExampleCategory); $intExampleIndex++) {
 					if (array_key_exists($intExampleIndex, $objExampleCategory)) {
@@ -330,7 +330,7 @@
 				$strCat = substr (QApplicationBase::$ScriptFilename, $offset, $endoffset - $offset);
 
 				// Make sure it exists
-				if (!empty(Examples::$PluginExamples[$strCat])) {
+				if (!empty(static::$PluginExamples[$strCat])) {
 					return $strCat;
 				}
 			}
@@ -345,11 +345,11 @@
 				$strCat = substr (QApplicationBase::$ScriptFilename, $offset, $endoffset - $offset);
 
 				// make sure it exists (prevents cross-script attack)
-				if (!empty(Examples::$PluginExamples[$strCat])) {
+				if (!empty(static::$PluginExamples[$strCat])) {
 					$endoffset = strrpos (QApplicationBase::$ScriptFilename, '/', $offset);
 					$strCurFile = substr(QApplicationBase::$ScriptFilename, $endoffset + 1);
-					for ($intExampleIndex = 0; $intExampleIndex < count(Examples::$PluginExamples[$strCat]); $intExampleIndex++) {
-						if (Examples::$PluginExamples[$strCat][$intExampleIndex] == $strCurFile) {
+					for ($intExampleIndex = 0; $intExampleIndex < count(static::$PluginExamples[$strCat]); $intExampleIndex++) {
+						if (static::$PluginExamples[$strCat][$intExampleIndex] == $strCurFile) {
 							return $strCurFile;
 						}
 					}
@@ -360,10 +360,10 @@
 
 		public static function GetExampleName($mixCategoryId, $mixExampleId) {
 			if ($mixCategoryId == 'plugin') {
-				$strExample = Examples::$PluginExamples[$mixExampleId][0];
+				$strExample = static::$PluginExamples[$mixExampleId][0];
 				return $strExample;
 			}
-			$strExample = Examples::$Categories[$mixCategoryId][$mixExampleId];
+			$strExample = static::$Categories[$mixCategoryId][$mixExampleId];
 			$intPosition = strpos($strExample, ' ');
 			$strScriptPath = substr($strExample, 0, $intPosition);
 			$strName = substr($strExample, $intPosition + 1);
@@ -375,7 +375,7 @@
 				$strScriptPath =  __PLUGIN_ASSETS__ . "/{$mixExampleId}/examples/{$mixSubId}";
 				return $strScriptPath;
 			}
-			$strExample = Examples::$Categories[$mixCategoryId][$mixExampleId];
+			$strExample = static::$Categories[$mixCategoryId][$mixExampleId];
 			$intPosition = strpos($strExample, ' ');
 			$strScriptPath = substr($strExample, 0, $intPosition);
 			return $strScriptPath;
@@ -385,7 +385,7 @@
 			if (is_null($strReference))
 				$strReference = QApplication::$ScriptName;
 
-			foreach (Examples::$Categories as $objExampleCategory)
+			foreach (static::$Categories as $objExampleCategory)
 				foreach ($objExampleCategory as $strKey => $strExample)
 					if (is_numeric($strKey)) {
 						// Pull out the URL fragment from the example tree
@@ -403,7 +403,7 @@
 			if (is_null($strReference))
 				$strReference = QApplication::$ScriptName;
 
-			foreach (Examples::$Categories as $objExampleCategory)
+			foreach (static::$Categories as $objExampleCategory)
 				foreach ($objExampleCategory as $strKey => $strExample)
 					if (is_numeric($strKey)) {
 						// Pull out the URL fragment from the example tree
@@ -418,7 +418,7 @@
 		public static function CodeLinks($strCategoryId, $strExampleId, $strSubId, $strCurrentScript) {
 			$blnIsScript = false;
 
-			$strReference = Examples::GetExampleScriptPath($strCategoryId, $strExampleId, $strSubId);
+			$strReference = static::GetExampleScriptPath($strCategoryId, $strExampleId, $strSubId);
 
 			if ($strCurrentScript == 'header.inc.php') {
 				$strToReturn = '<span class="headerGray">header.inc.php</span>';
@@ -471,12 +471,12 @@
 			}
 
 			if ($strCategoryId == 'plugin') {
-				if (!empty(Examples::$PluginAdditions[$strExampleId][$strSubId])) {
-					$extraFiles = Examples::$PluginAdditions[$strExampleId][$strSubId];
+				if (!empty(static::$PluginAdditions[$strExampleId][$strSubId])) {
+					$extraFiles = static::$PluginAdditions[$strExampleId][$strSubId];
 				}
 			}
-			if(array_key_exists($strReference, Examples::$AdditionalCode)) {
-				$extraFiles = Examples::$AdditionalCode[$strReference];
+			if(array_key_exists($strReference, static::$AdditionalCode)) {
+				$extraFiles = static::$AdditionalCode[$strReference];
 			}
 
 			if (!empty($extraFiles)) {
@@ -520,7 +520,7 @@
 				return $strLink;
 			}
 
-			foreach (Examples::$Categories as $objExampleCategory) {
+			foreach (static::$Categories as $objExampleCategory) {
 				if (!$blnFound) {
 					$strPrevious = null;
 					$strNext = null;
@@ -557,7 +557,7 @@
 			else
 				$strToReturn = '<span class="headerGray">&lt;&lt; Previous</span>';
 
-			$intCategoryId = Examples::GetCategoryId();
+			$intCategoryId = static::GetCategoryId();
 			if ($intCategoryId < 3)
 				$intPartId = 1;
 			else if ($intCategoryId < 10)
@@ -567,7 +567,7 @@
 
 			$strToReturn .= ' &nbsp; | &nbsp; ';
 			$strToReturn .= sprintf('<strong><a href="%s/index.php%s" class="headerLink">Back to Main</a></strong>',
-				__VIRTUAL_DIRECTORY__ . __EXAMPLES__, $intPartId == 1 ? "" : "/" . $intPartId);
+				'', $intPartId == 1 ? "" : "/" . $intPartId);
 			$strToReturn .= ' &nbsp; | &nbsp; ';
 
 			if ($strNext)
@@ -581,5 +581,5 @@
 	
 	//require_once(__PLUGINS__ . "/plugin_examples.php");
 
-	Examples::Init();
+	MyExamples::Init();
 ?>

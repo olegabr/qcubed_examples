@@ -32,8 +32,8 @@ require('includes/header.inc.php');
 </div>
 
 <?php
-for ($intIndex = 0; $intIndex < count(Examples::$Categories); $intIndex++) {
-	$objExampleCategory = Examples::$Categories[$intIndex];
+for ($intIndex = 0; $intIndex < count(MyExamples::$Categories); $intIndex++) {
+	$objExampleCategory = MyExamples::$Categories[$intIndex];
 
 	if ($intIndex == 0) {
 ?>
